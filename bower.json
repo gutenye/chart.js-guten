@@ -1,0 +1,22 @@
+{
+  "name": "Chart.js-guten",
+  "version": "0.0.0",
+  "authors": [
+    "Guten Ye <ywzhaifei@gmail.com>"
+  ],
+  "description": "",
+  "main": "Chart-guten.js",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "Chart.js": "~1.0.2"
+  }
+}

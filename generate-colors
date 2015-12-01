@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+var tinycolor = require("tinycolor2")
+var pd = console.log.bind(console)
+
+var colors = [
+  "#bf616a", // red
+  "#5B90BF", // blue
+  "#d08770", // orange
+  "#ebcb8b", // yellow
+  "#a3be8c", // green
+  "#96b5b4", // teal
+  "#8fa1b3", // pale_blue
+  "#b48ead", // purple
+  "#ab7967" // brown
+]
+
+colors = colors.map(v => {
+  return [v, tinycolor(v).lighten(5).toString()]
+})
+
+ret = ""
+colors.forEach(v => {
+  ret = `${ret}  ["${v[0]}", "${v[1]}"],\n`
+})
+
+ret = `
+var colors = [
+${ret}]
+`
+console.log(ret)

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Chart-guten.js</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<canvas width="400" height="400"></canvas>
+<script src="bower_components/Chart.js/Chart.js"></script>
+<script src="Chart-guten.js"></script>
+<script>
+var pd = console.log.bind(console)
+var $ = function(selector) { return typeof selector === "string" ? document.querySelector(selector) : selector || null }
+var $$ = function(selector) { return [].slice.call(document.querySelectorAll(selector)) }
+
+var data = Chart.toDoughnutData([["Red", 300], ["Green", 50], ["Yellow", 100]])
+var doughnut = new Chart($("canvas").getContext("2d")).Doughnut(data)
+</script>
+</body>
+</html>

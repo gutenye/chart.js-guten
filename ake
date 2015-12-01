@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+release() {
+  sed -i "s/\"version\":.*/\"version\": \"$1\",/" bower.json package.json
+
+  # npm release
+  npm publish
+
+  # bower release
+  git add .
+  git commit -m "$1"
+  git tag "$1"
+  git push --tags
+}
+
+case "$1" in
+  release | r ) shift; release "$@" ;;
+esac
